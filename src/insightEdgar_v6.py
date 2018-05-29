@@ -71,7 +71,7 @@ for elem in csv_f:
     try:
         df = date_function(elem)
         elapsed0=df-sessions[elem[0]][1]
-        elapsed=24*3600*elapsed0.days+elapsed0.seconds   
+        elapsed=24*3600*elapsed0.days+elapsed0.seconds
     except(ValueError,KeyError):
         pass
     #First we go through the open sessions and see which ones should be closed.
@@ -85,7 +85,7 @@ for elem in csv_f:
         time_since_use=24*3600*delta.days+delta.seconds
         if time_since_use > t_gap:
             time_session=stuff[1][1]-stuff[1][2]
-            seconds_on=24*3600*time_session.days+time_session.seconds
+            seconds_on=24*3600*time_session.days+time_session.seconds+1
             out.write(stuff[0]+','+str(stuff[1][2])+','+str(stuff[1][1])+',' \
                      +str(seconds_on)+','+str(stuff[1][0])+"\n")
             del sessions[stuff[0]]
@@ -136,7 +136,7 @@ sl=list(sessions.items())
 sl.sort(key=lambda x: x[1][1])    
 for stuff in sl:
     delta=df-stuff[1][2]
-    time_session=24*3600*delta.days+delta.seconds
+    time_session=24*3600*delta.days+delta.seconds+1
     out.write(stuff[0]+','+str(stuff[1][2])+','+str(stuff[1][1])+',' \
        +str(time_session)+','+str(stuff[1][0])+"\n")
     del sessions[stuff[0]]        
