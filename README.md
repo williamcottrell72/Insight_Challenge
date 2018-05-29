@@ -1,8 +1,6 @@
 # Insight_Challenge
 Sessionizes log data from the Edgar website.
 
-To run the file, open the src file 'insightEdgar_v6.py' in python and run.
-
 The program works as follows.  First, we define a 'sessions' dictionary which
 records information about open sessions, including which ip addresses currently 
 have open sessions and which files they have accessed.  We then scan through 
