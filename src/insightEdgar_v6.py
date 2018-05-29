@@ -10,9 +10,9 @@ import csv
 
 
 
-f=open(r"..\input\log.csv") 
-g=open(r"..\input\inactivity_period.txt")
-out=open('..\output\sessionization.txt','w+')
+f=open(r"../input/log.csv") 
+g=open(r"../input/inactivity_period.txt")
+out=open('../output/sessionization.txt','w+')
 csv_f=csv.reader(f)
 t_gap=int(g.readlines(1)[0])
 
