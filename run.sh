@@ -1,1 +1,2 @@
-python ./src/sessionization.py ./input/log.csv ./input/inactivity_period.txt ./output/sessionization.txt
+#/bin/sh-
+python ./src/insightEdgar_v6.py 
