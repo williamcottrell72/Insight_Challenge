@@ -107,16 +107,16 @@ for elem in csv_f:
             #exceptions where multiple lines represent the same user requesting
             #the same document in a short time interval and this must be
             #accounted for.
-            if doc_id(elem) in sessions[elem[0]][3]:
-                pass
+#            if doc_id(elem) in sessions[elem[0]][3]:
+#                pass
             #For a new doc request by the same user we update the session data.
-            else:
-                sessions[elem[0]][0]+=1
-                sessions[elem[0]][1]=df
-                tmp=sessions[elem[0]][3]
-                tmp.append(doc_id(elem))
-                sessions[elem[0]]=[sessions[elem[0]][0],sessions[elem[0]][1],\
-                              sessions[elem[0]][2],tmp]
+#            else:
+            sessions[elem[0]][0]+=1
+            sessions[elem[0]][1]=df
+            tmp=sessions[elem[0]][3]
+            tmp.append(doc_id(elem))
+            sessions[elem[0]]=[sessions[elem[0]][0],sessions[elem[0]][1],\
+                sessions[elem[0]][2],tmp]
         except(IndexError,TypeError,AttributeError):
             pass
     #If elem is not in sessions at all then we must create a new entry in the
